@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C32f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KnobControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMp-Ss-PXt">
+                                <rect key="frame" x="84" y="52" width="206" height="206"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CK1-jP-1j5">
+                                        <rect key="frame" x="77.5" y="90" width="51" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="CK1-jP-1j5" firstAttribute="centerX" secondItem="FMp-Ss-PXt" secondAttribute="centerX" id="E4t-d8-DFI"/>
+                                    <constraint firstAttribute="width" secondItem="FMp-Ss-PXt" secondAttribute="height" multiplier="1:1" id="mDK-TY-lo3"/>
+                                    <constraint firstItem="CK1-jP-1j5" firstAttribute="centerY" secondItem="FMp-Ss-PXt" secondAttribute="centerY" id="sGa-VO-sdm"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vPK-Cb-dPZ">
+                                <rect key="frame" x="14" y="266" width="347" height="31"/>
+                                <connections>
+                                    <action selector="handleValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Bs6-Ca-Do9"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lK-eT-Uxo">
+                                <rect key="frame" x="137.5" y="328" width="99" height="30"/>
+                                <state key="normal" title="Random Value"/>
+                                <connections>
+                                    <action selector="handleRandomButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NQa-eT-D29"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FMp-Ss-PXt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.55" id="3Ot-gd-i7P"/>
+                            <constraint firstItem="vPK-Cb-dPZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Any-5W-g5d"/>
+                            <constraint firstItem="8lK-eT-Uxo" firstAttribute="top" secondItem="vPK-Cb-dPZ" secondAttribute="bottom" constant="32" id="BTb-z8-k28"/>
+                            <constraint firstItem="FMp-Ss-PXt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GhP-CF-wS2"/>
+                            <constraint firstItem="vPK-Cb-dPZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IgF-qc-ucI"/>
+                            <constraint firstItem="FMp-Ss-PXt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="YJl-Vl-2Te"/>
+                            <constraint firstItem="8lK-eT-Uxo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hoR-HH-Ga2"/>
+                            <constraint firstItem="vPK-Cb-dPZ" firstAttribute="top" secondItem="FMp-Ss-PXt" secondAttribute="bottom" constant="8" id="jcV-9x-pZf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="knobPlaceholder" destination="FMp-Ss-PXt" id="1B8-hn-3HN"/>
+                        <outlet property="valueButton" destination="8lK-eT-Uxo" id="BsM-Gw-XPH"/>
+                        <outlet property="valueLabel" destination="CK1-jP-1j5" id="47C-N6-j1x"/>
+                        <outlet property="valueSlider" destination="vPK-Cb-dPZ" id="5Uu-pV-cBm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
